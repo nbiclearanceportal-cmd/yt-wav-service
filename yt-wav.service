@@ -1,0 +1,14 @@
+[Unit]
+Description=YT to WAV microservice
+After=network.target
+
+[Service]
+User=ytwav
+WorkingDirectory=/opt/yt-wav
+EnvironmentFile=/etc/yt-wav.env
+ExecStart=/opt/yt-wav/venv/bin/waitress-serve --listen=0.0.0.0:8765 app:app
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

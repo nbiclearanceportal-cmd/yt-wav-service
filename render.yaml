@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: yt-wav-service
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    # Env vars (YTW_SECRET, YTW_BASE_URL) dashboard mein set karein -
+    # secret kabhi repo mein na dalein.
